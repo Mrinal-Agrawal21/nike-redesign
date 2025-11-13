@@ -8,7 +8,7 @@ import {
   Navbar,
   Sales,
   Stories,
-  Like,
+
 } from "./components";
 import {
   heroapi,
@@ -26,7 +26,6 @@ const App = () => {
       <>
         <Navbar />
         <Cart />
-        <Like />
         <main className="flex flex-col gap-16 relative">
           <Routes>
             <Route

@@ -25,11 +25,7 @@ import product10 from "../assets/product10.png";
 import product11 from "../assets/product11.png";
 import product12 from "../assets/product12.png";
 
-import facebook from "../assets/facebook.svg";
-import instagram from "../assets/instagram.svg";
-import twitter from "../assets/twitter.svg";
-import youtube from "../assets/youtube.svg";
-import messenger from "../assets/messenger.svg";
+
 
 const heroapi = {
   title: "Play With Electric Nike",

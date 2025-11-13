@@ -921,6 +921,7 @@ export default function InfiniteMenu({ items = [] }) {
     const [activeItem, setActiveItem] = useState(null);
     const [isMoving, setIsMoving] = useState(false);
     const [showLeft, setShowLeft] = useState(true);
+    const [showTooltip, setShowTooltip] = useState(true);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -986,12 +987,24 @@ export default function InfiniteMenu({ items = [] }) {
 
     return (
         <div className="relative w-full h-full">
-            <canvas
-                id="infinite-grid-menu-canvas"
-                ref={canvasRef}
-                className="cursor-move w-full h-full overflow-hidden relative outline-none active:cursor-grabbing"
-                onClick={toggleTextPosition}
-            />
+            <div className="relative w-full h-full">
+                <canvas
+                    id="infinite-grid-menu-canvas"
+                    ref={canvasRef}
+                    className="cursor-move w-full h-full overflow-hidden relative outline-none active:cursor-grabbing"
+                    onClick={toggleTextPosition}
+                    onMouseEnter={() => setShowTooltip(true)}
+                    onMouseLeave={() => setShowTooltip(false)}
+                />
+                {showTooltip && !isMoving && (
+                    <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 bg-black/70 text-white text-sm px-4 py-2 rounded-full flex items-center pointer-events-none transition-opacity duration-300">
+                        <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-9-3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Drag to rotate
+                    </div>
+                )}
+            </div>
 
             {activeItem && (
                 <div className={`absolute inset-0 flex items-center justify-center pointer-events-none`}>
