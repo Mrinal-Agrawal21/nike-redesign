@@ -1,7 +1,7 @@
 import heroimg from "../assets/hero.png";
-
 import hightlightimg from "../assets/hightlightimg.png";
 import sneakershoe from "../assets/sneaker.png";
+import { FaFacebook, FaFacebookMessenger, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 
 import clip from "../assets/video/clip.mp4";
 import vcover1 from "../assets/video/vcover1.png";
@@ -38,11 +38,11 @@ const heroapi = {
     { imgsrc: vcover3, clip: clip },
   ],
   sociallinks: [
-    { icon: facebook, link: "https://www.facebook.com/nike" },
-    { icon: messenger, link: "https://www.messenger.com/t/nike" },
-    { icon: instagram, link: "https://www.instagram.com/nike/?hl=en" },
-    { icon: twitter, link: "https://twitter.com/Nike" },
-    { icon: youtube, link: "https://www.youtube.com/user/NIKE" },
+    { icon: FaFacebook, link: "https://www.facebook.com/nike" },
+    { icon: FaFacebookMessenger, link: "https://www.messenger.com/t/nike" },
+    { icon: FaInstagram, link: "https://www.instagram.com/nike/?hl=en" },
+    { icon: FaTwitter, link: "https://twitter.com/Nike" },
+    { icon: FaYoutube, link: "https://www.youtube.com/user/NIKE" },
   ],
 };
 
